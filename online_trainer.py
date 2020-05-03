@@ -74,7 +74,7 @@ class OnlineTrainer:
                     self.network.backPropagate(grad, 0.2, 0) # grad, pas d'app, moment
                     # Pas d'apprentissage = gain de l'erreur (coef multiplicateur)
                 else :
-                    #self.network.random_update(0.001)
+#                    self.network.random_update(0.001)
                     self.network.backPropagate(grad, 0.2, 0)
                 
         self.robot.set_motor_velocity([0,0]) # stop  apres arret  du prog d'app

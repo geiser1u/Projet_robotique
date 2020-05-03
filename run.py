@@ -27,16 +27,18 @@ if choice == 'y':
         for j in range(2):
             network.wo[i][j] = json_obj["output_weights"][i][j]
 
-trainer = OnlineTrainerWithBraitenberg(robot, network, braitenberg)
-#trainer = OnlineTrainer()
+trainer1 = OnlineTrainer(robot, network)
+trainer2 = OnlineTrainerWithBraitenberg(robot, network, braitenberg)
 
 choice = ''
 while choice!='y' and choice !='n':
     choice = input('Do you want to learn? (y/n) --> ')
 
 if choice == 'y':
+    trainer = trainer1
     trainer.training = True
 elif choice == 'n':
+    trainer = trainer2
     trainer.training = False
 
 target = input("Enter the first target : x y radian --> ")
@@ -64,8 +66,10 @@ while(continue_running):
         while choice_learning != 'y' and choice_learning !='n':
             choice_learning = input('Do you want to learn ? (y/n) --> ')
         if choice_learning =='y':
+            trainer = trainer1
             trainer.training = True
         elif choice_learning == 'n':
+            trainer = trainer2
             trainer.training = False
         target = input("Move the robot to the initial point and enter the new target : x y radian --> ")
         target = target.split()
