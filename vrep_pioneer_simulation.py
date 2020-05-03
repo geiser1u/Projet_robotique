@@ -82,3 +82,23 @@ class VrepPioneerSimulation:
         """
         vrep.simxSetJointTargetVelocity(self.client_id, self.left_motor, self.gain*control[0], vrep.simx_opmode_oneshot_wait)
         vrep.simxSetJointTargetVelocity(self.client_id, self.right_motor, self.gain*control[1], vrep.simx_opmode_oneshot_wait)
+
+    def get_motor_velocity(self):
+        """Get the velocities (q1, q2) of the left and right wheels of the robot
+        
+        Return:
+            command (list): [q1, q2]
+        """
+        command=[]
+        
+        res, linear_vel, angular_vel = vrep.simxGetObjectVelocity(self.client_id, self.left_motor, vrep.simx_opmode_oneshot_wait)
+        command.append(angular_vel[1]) #We append gamma that is the angular velocity of the wheel
+        
+        res, linear_vel, angular_vel = vrep.simxGetObjectVelocity(self.client_id, self.right_motor, vrep.simx_opmode_oneshot_wait)
+        command.append(angular_vel[1]) #We append gamma that is the angular velocity of the wheel
+        
+        return command
+    
+    def get_linear_velocity(self):
+        res, linear_vel, angular_vel = vrep.simxGetObjectVelocity(self.client_id, self.pioneer, vrep.simx_opmode_oneshot_wait)
+        return linear_vel

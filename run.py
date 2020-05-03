@@ -57,6 +57,17 @@ while(continue_running):
     #Ask for stop running
     input("Press Enter to stop the current training")
     trainer.running = False
+
+    #Log
+    name = input("Give a name to the log file (default to last) --> ")
+    
+    if name=='':
+        name='last'
+    with open("logs/"+ name + ".json", 'w') as f:
+        json.dump(trainer.log_file, f)
+        f.close()
+        print('Graph values have been saved in ' + name +'.json file')
+
     choice = ''
     while choice!='y' and choice !='n':
         choice = input("Do you want to continue ? (y/n) --> ")
