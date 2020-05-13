@@ -70,6 +70,7 @@ class VrepPioneerSimulation:
         distances = []
         for i in range(16):
             errorCode, detectionState, detectedPoint, detectedObjectHandle, detectedSurfaceNormalVector = vrep.simxReadProximitySensor(self.client_id, self.sensors[i], vrep.simx_opmode_oneshot_wait)
+#            print(detectedPoint)
             distances.append(np.linalg.norm(detectionState))
         return distances
 
