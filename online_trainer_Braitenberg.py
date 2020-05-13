@@ -9,7 +9,7 @@ class OnlineTrainerBraitenberg:
 
         while self.running:
             distances = self.robot.get_distances()
-            command = self.network.runNN([2,2], distances)
+            command = self.network.runNN([-2,-2], distances)
             self.robot.set_motor_velocity(command)                 
             time.sleep(0.050)
                 

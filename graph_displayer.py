@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 12 14:25:14 2018
-
-@author: clementlanglet
-"""
-
 import matplotlib.pyplot as mp
 import json
 #import Tkinter as tk
@@ -69,17 +61,17 @@ def get_data_from_json(name):
         return new_data
 
 if __name__ == "__main__":
-    #print("here i am 1")
+#    print("here i am 1")
     root = tk.Tk()
     root.withdraw()
-    #print("here i am 2")
-    filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("json files","*.json"),("all files","*.*")))
-    #filename = input('file name?')
-    #print("here i am 3")
+#    print("here i am 2")
+#    filename = filedialog.askopenfilename(initialdir = "logs/",title = "Select file",filetypes = (("json files","*.json"),("all files","*.*")))
+    filename = input('file name?')
+#    print("here i am 3")
     root.update()
-    print("\n\n")
-    print(filename)
-    print("\n\n")
+#    print("\n\n")
+#    print(filename)
+#    print("\n\n")
     data = get_data_from_json(filename)
 
 #    #Compared graphics initialization : uncomment and specify the directory of lessons and tests you want to print
@@ -95,48 +87,48 @@ if __name__ == "__main__":
 #    test4 = get_data_from_json('./logs/' + directory + '/test4.json')
 #    test5 = get_data_from_json('./logs/' + directory + '/test5.json')
 
-    print("Parameters:\n" +
-          "- Size of the training area: " + str(data["size"]))
+#    print("Parameters:\n" +
+#          "- Size of the training area: " + str(data["size"]))
 
-    g = Graph()
-    g.add_legend("Trajectory", "x", "y")
-    g.add_data_set(data["x"], data["y"])
-    g.show()
+#    g = Graph()
+#    g.add_legend("Trajectory", "x", "y")
+#    g.add_data_set(data["x"], data["y"])
+#    g.show()
 
-    g = Graph()
-    g.add_legend("Evolution of x(t)", "t", "x")
-    g.add_data_set(data["t"], data["x"])
-    g.show()
-
-    g = Graph()
-    g.add_legend("Evolution of y(t)", "t", "y")
-    g.add_data_set(data["t"], data["y"])
-    g.show()
-
-    g = Graph()
-    g.add_legend("Evolution of theta(t)", "t", "theta")
-    g.add_data_set(data["t"], data["theta"])
-    g.show()
-
-    g = Graph()
-    g.add_legend("Evolution of theta_shift(t)", "t", "theta_shift")
-    g.add_data_set(data["t"], data["theta_shifts"])
-    g.show()
-
-    g = Graph()
-    g.add_legend("Evolution of criterion(t)", "t", "criterion")
-    g.add_data_set(data["t"], data["criterions"])
-    g.show()
-
-    g = Graph()
-    g.add_legend("Evolution of q1(t)", "t", "q1")
-    g.add_data_set(data["t"], data["q1"])
-    g.show()
-
-    g = Graph()
-    g.add_legend("Evolution of q2(t)", "t", "q2")
-    g.add_data_set(data["t"], data["q2"])
-    g.show()
+#    g = Graph()
+#    g.add_legend("Evolution of x(t)", "t", "x")
+#    g.add_data_set(data["t"], data["x"])
+#    g.show()
+#
+#    g = Graph()
+#    g.add_legend("Evolution of y(t)", "t", "y")
+#    g.add_data_set(data["t"], data["y"])
+#    g.show()
+#
+#    g = Graph()
+#    g.add_legend("Evolution of theta(t)", "t", "theta")
+#    g.add_data_set(data["t"], data["theta"])
+#    g.show()
+#
+#    g = Graph()
+#    g.add_legend("Evolution of theta_shift(t)", "t", "theta_shift")
+#    g.add_data_set(data["t"], data["theta_shifts"])
+#    g.show()
+#
+#    g = Graph()
+#    g.add_legend("Evolution of criterion(t)", "t", "criterion")
+#    g.add_data_set(data["t"], data["criterions"])
+#    g.show()
+#
+#    g = Graph()
+#    g.add_legend("Evolution of q1(t)", "t", "q1")
+#    g.add_data_set(data["t"], data["q1"])
+#    g.show()
+#
+#    g = Graph()
+#    g.add_legend("Evolution of q2(t)", "t", "q2")
+#    g.add_data_set(data["t"], data["q2"])
+#    g.show()
 
 #    #Compared graphics
 #    g = Graph()
