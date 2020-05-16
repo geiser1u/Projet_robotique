@@ -90,45 +90,45 @@ if __name__ == "__main__":
 #    print("Parameters:\n" +
 #          "- Size of the training area: " + str(data["size"]))
 
-#    g = Graph()
-#    g.add_legend("Trajectory", "x", "y")
-#    g.add_data_set(data["x"], data["y"])
-#    g.show()
+    g = Graph()
+    g.add_legend("Trajectory", "x", "y")
+    g.add_data_set(data["x"], data["y"])
+    g.show()
 
-#    g = Graph()
-#    g.add_legend("Evolution of x(t)", "t", "x")
-#    g.add_data_set(data["t"], data["x"])
-#    g.show()
-#
-#    g = Graph()
-#    g.add_legend("Evolution of y(t)", "t", "y")
-#    g.add_data_set(data["t"], data["y"])
-#    g.show()
-#
-#    g = Graph()
-#    g.add_legend("Evolution of theta(t)", "t", "theta")
-#    g.add_data_set(data["t"], data["theta"])
-#    g.show()
-#
-#    g = Graph()
-#    g.add_legend("Evolution of theta_shift(t)", "t", "theta_shift")
-#    g.add_data_set(data["t"], data["theta_shifts"])
-#    g.show()
-#
-#    g = Graph()
-#    g.add_legend("Evolution of criterion(t)", "t", "criterion")
-#    g.add_data_set(data["t"], data["criterions"])
-#    g.show()
-#
-#    g = Graph()
-#    g.add_legend("Evolution of q1(t)", "t", "q1")
-#    g.add_data_set(data["t"], data["q1"])
-#    g.show()
-#
-#    g = Graph()
-#    g.add_legend("Evolution of q2(t)", "t", "q2")
-#    g.add_data_set(data["t"], data["q2"])
-#    g.show()
+    g = Graph()
+    g.add_legend("Evolution of x(t)", "t", "x")
+    g.add_data_set(data["t"], data["x"])
+    g.show()
+
+    g = Graph()
+    g.add_legend("Evolution of y(t)", "t", "y")
+    g.add_data_set(data["t"], data["y"])
+    g.show()
+
+    g = Graph()
+    g.add_legend("Evolution of theta(t)", "t", "theta")
+    g.add_data_set(data["t"], data["theta"])
+    g.show()
+
+    g = Graph()
+    g.add_legend("Evolution of theta_shift(t)", "t", "theta_shift")
+    g.add_data_set(data["t"], data["theta_shifts"])
+    g.show()
+
+    g = Graph()
+    g.add_legend("Evolution of criterion(t)", "t", "criterion")
+    g.add_data_set(data["t"], data["criterions"])
+    g.show()
+
+    g = Graph()
+    g.add_legend("Evolution of q1(t)", "t", "q1")
+    g.add_data_set(data["t"], data["q1"])
+    g.show()
+
+    g = Graph()
+    g.add_legend("Evolution of q2(t)", "t", "q2")
+    g.add_data_set(data["t"], data["q2"])
+    g.show()
 
 #    #Compared graphics
 #    g = Graph()
